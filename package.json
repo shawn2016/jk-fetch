@@ -1,0 +1,33 @@
+{
+  "name": "sx-fetch",
+  "version": "0.0.1",
+  "description": "基于 axios 的网络请求库",
+  "main": "./dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -r ./dist",
+    "build": "./node_modules/.bin/babel src -d dist",
+    "prepublish": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sxfed/sx-fetch.git"
+  },
+  "author": "sxfed",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sxfed/sx-fetch/issues"
+  },
+  "homepage": "https://github.com/sxfed/sx-fetch#readme",
+  "dependencies": {
+    "axios": "^0.16.2",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "hoist-non-react-statics": "^2.2.1",
+    "react": "^15.6.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1"
+  }
+}
