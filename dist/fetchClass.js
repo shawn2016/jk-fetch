@@ -63,6 +63,7 @@ var SxFetch = function () {
         _classCallCheck(this, SxFetch);
 
         this.singleGets = {};
+        this.singlePosts = {};
         this.inject = _fetchDecorator2.default;
 
         /**
@@ -303,7 +304,27 @@ var SxFetch = function () {
             this.singleGets[url] = singleFetch;
             return singleFetch;
         }
+    }, {
+        key: 'singlePost',
 
+        /**
+         * 发送新的相同url的post请求，历史未结束相同url请求就会被打断，同一个url请求，最终只会触发一次
+         * 用于输入框，根据输入远程获取提示等场景
+         *
+         * @param {string} url 请求路径
+         * @param {object} [params] 传输给后端的数据
+         * @param {object} [options] axios 配置参数
+         * @returns {Promise}
+         */
+        value: function singlePost(url, params, options) {
+            var oldFetch = this.singlePosts[url];
+            if (oldFetch) {
+                oldFetch.cancel();
+            }
+            var singleFetch = this.fetch(url, params, 'post', options);
+            this.singlePosts[url] = singleFetch;
+            return singleFetch;
+        }
         /**
          * 并发请求方法
          * @param  {Array} args fetch 请求数组

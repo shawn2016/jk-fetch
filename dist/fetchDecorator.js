@@ -62,7 +62,7 @@ function fetchInject() {
 
                 _this[propName] = {};
                 _this._$fetchTokens = [];
-                var fetchMethods = ['get', 'post', 'put', 'patch', 'del', 'singleGet', 'all'];
+                var fetchMethods = ['get', 'post', 'put', 'patch', 'del', 'singleGet', 'singlePost', 'all'];
 
                 var _iteratorNormalCompletion = true;
                 var _didIteratorError = false;

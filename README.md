@@ -1,4 +1,4 @@
-# sx-fetch
+# jk-fetch
 
 基于[axios](https://github.com/mzabriskie/axios)的前端网络请求库。
 
@@ -6,19 +6,19 @@
 
 npm:
 ```bash
-$ npm install sx-fetch --save
+$ npm install jk-fetch --save
 ```
 
 yarn:
 ```bash
-$ yarn add sx-fetch
+$ yarn add jk-fetch
 ```
 
 ## 使用
 
 初始化：
 ```js
-import fetch from 'sx-fetch';
+import fetch from 'jk-fetch';
 
 fetch.init({
     setOptions: (instance) => {
@@ -38,7 +38,7 @@ fetch.init({
     },
 });
 ```
-`sx-fetch` 0.2.1 版本及以上支持以下写法。
+`jk-fetch` 0.2.1 版本及以上支持以下写法。
 ```js
 fetch.init({
     baseURL: 'http://localhost:8080/';
@@ -84,7 +84,7 @@ fetch.get('/user').then(user => {
 
 ###
 #### 创建新的fetch实例
->需要 `sx-fetch` 版本 >= 0.2.1
+>需要 `jk-fetch` 版本 >= 0.2.1
 
 应用中有时需要同时使用不同的fetch配置，例如需要请求多个服务器。这时可以使用 `create` 方法创建新的fetch实例。
 ##### fetch.create([options])
@@ -109,7 +109,7 @@ const instance = fetch.create({
 ###
 
 #### 通过 `defaults` 属性设置fetch实例的配置信息
->需要 `sx-fetch` 版本 >= 0.2.1
+>需要 `jk-fetch` 版本 >= 0.2.1
 
 ```js
 fetch.defaults.baseURL = 'http://localhost:8080';
@@ -129,7 +129,7 @@ fetch.mockDefaults.baseURL = 'http://localhost:8080';
 ...
 ```
 
-## sx-fetch API
+## jk-fetch API
 
 ### 请求方法
 ##### fetch.get(url[, params[, options]])
@@ -156,10 +156,10 @@ fetch.mockDefaults.baseURL = 'http://localhost:8080';
 `options` 详细配置参数参考 [axios#request-config](https://github.com/mzabriskie/axios#request-config);
 
 #### 并发请求
->需要 `sx-fetch` 版本 >= 0.2.1
+>需要 `jk-fetch` 版本 >= 0.2.1
 
 同时发起多个请求，全部请求完成之后再执行回调。
-可以使用 `Promise.all()` 方法，`sx-fetch` 也内置了 `all` 方法。
+可以使用 `Promise.all()` 方法，`jk-fetch` 也内置了 `all` 方法。
 ##### fetch.all(iterable)
 ```js
 const getUser = fetch.get('/user');
@@ -185,7 +185,7 @@ fetch.all([getUser, getList]).then(([user, list]) => {
 
 ```js
 import React, {Component} from 'react';
-import fetch from 'sx-fetch';
+import fetch from 'jk-fetch';
 
 @fetch.inject()
 class Comps extends Component {

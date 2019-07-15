@@ -28,7 +28,7 @@ function fetchInject({propName = '$fetch'} = {}) {
                 super(props);
                 this[propName] = {};
                 this._$fetchTokens = [];
-                const fetchMethods = ['get', 'post', 'put', 'patch', 'del', 'singleGet', 'all'];
+                const fetchMethods = ['get', 'post', 'put', 'patch', 'del', 'singleGet','singlePost', 'all'];
 
                 for (let method of fetchMethods) {
                     this[propName][method] = (...args) => {
